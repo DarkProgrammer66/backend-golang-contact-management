@@ -31,7 +31,7 @@ func Register(c *fiber.Ctx) error {
 	var existing model.User
 	if err := config.DB.Where("username = ?", req.Username).First(&existing).Error; err == nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": "Username already exists",
+			"errors": "Username already registered",
 		})
 	}
 
@@ -64,11 +64,9 @@ func Register(c *fiber.Ctx) error {
 	}
 
 	return c.Status(fiber.StatusCreated).JSON(fiber.Map{
-		"message": "User registered successfully",
-		"user": fiber.Map{
+		"data": fiber.Map{
 			"username": user.Username,
 			"name":     user.Name,
-			"token":    user.Token,
 		},
 	})
 }
