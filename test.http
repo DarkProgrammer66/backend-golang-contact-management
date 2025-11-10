@@ -9,22 +9,12 @@ Content-Type: application/json
   "name" : "Programmer Zaman Now"
 }
 
-### Create New User
-POST http://localhost:3000/api/users
+### Login User
+POST http://localhost:3000/api/users/login
 Accept: application/json
 Content-Type: application/json
 
 {
-  "Architecture": {
-    "Frontend": {
-      "Language": "Javascript",
-      "Framework": "React + Tailwind"
-    },
-    "Backend": {
-      "Language": "Golang",
-      "Framework": "GoFiber",
-      "Library": "GORM",
-      "Database": "MySQL"
-    }
-  }
+  "username" : "pzn",
+  "password" : "rahasia"
 }

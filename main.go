@@ -24,6 +24,7 @@ func main() {
 	config.DB.AutoMigrate(&model.User{})
 
 	app.Post("/api/users", handler.Register)
+	app.Post("/api/users/login", handler.Login)
 
 	app.Listen(":3000")
 }

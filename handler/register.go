@@ -10,7 +10,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-var jwtSecret = []byte("SECRET_KEY_KAMU") // ubah ke secret sesungguhnya
+var jwtSecret = []byte("RAHASIA") // ubah ke secret sesungguhnya
 
 type RegisterRequest struct {
 	Username string `json:"username"`
