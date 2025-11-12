@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
@@ -11,19 +12,22 @@ var SecretKey = []byte("RAHASIA")
 
 func JWTProtected(c *fiber.Ctx) error {
 	authHeader := c.Get("Authorization")
+	fmt.Println("Authorization header:", authHeader)
+
 	if authHeader == "" {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
-			"errors": "Unauthorized",
+			"errors": "b",
 		})
 	}
-	tokenStr := strings.TrimSpace(authHeader)
+	tokenStr := strings.Trim(authHeader, "\" ")
 	token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
 		return SecretKey, nil
 	})
+	fmt.Println("Token setelah trim:", tokenStr)
 
 	if err != nil || !token.Valid {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
-			"errors": "Unauthorized",
+			"errors": "c",
 		})
 	}
 
