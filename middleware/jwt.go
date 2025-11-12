@@ -1,28 +1,33 @@
 package middleware
 
 import (
+	"strings"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"
 )
 
-var JwtSecret = []byte("supersecretkey")
+var SecretKey = []byte("RAHASIA")
 
-func Protected() fiber.Handler {
-	return func(c *fiber.Ctx) error {
-		tokenString := c.Get("Authorization")
-
-		if tokenString == "" {
-			return c.Status(401).JSON(fiber.Map{"errors": "Missing token"})
-		}
-
-		token, err := jwt.Parse(tokenString, func(t *jwt.Token) (interface{}, error) {
-			return JwtSecret, nil
+func JWTProtected(c *fiber.Ctx) error {
+	authHeader := c.Get("Authorization")
+	if authHeader == "" {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"errors": "Unauthorized",
 		})
-
-		if err != nil || !token.Valid {
-			return c.Status(401).JSON(fiber.Map{"errors": "Invalid token"})
-		}
-
-		return c.Next()
 	}
+	tokenStr := strings.TrimSpace(authHeader)
+	token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
+		return SecretKey, nil
+	})
+
+	if err != nil || !token.Valid {
+		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"errors": "Unauthorized",
+		})
+	}
+
+	claims := token.Claims.(jwt.MapClaims)
+	c.Locals("username", claims["username"])
+	return c.Next()
 }

@@ -18,3 +18,7 @@ Content-Type: application/json
   "username" : "pzn",
   "password" : "rahasia"
 }
+
+### Get User API
+GET http://localhost:3000/api/users/current
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjI5MTkzMDgsInVzZXJuYW1lIjoicHpuIn0.pQvpxM2-VSG8jKeVuUx432ARB1VoK551-_lYiBFk8TU
