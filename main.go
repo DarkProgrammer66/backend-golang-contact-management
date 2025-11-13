@@ -17,7 +17,7 @@ func main() {
 	// ✅ Izinkan semua origin (selama pengembangan)
 	app.Use(cors.New(cors.Config{
 		AllowOrigins:     "http://localhost:5173", // bisa diganti dengan "http://localhost:5173"
-		AllowMethods:     "GET,POST,PUT,DELETE,OPTIONS",
+		AllowMethods:     "GET,POST,PUT,DELETE,OPTIONS,PATCH",
 		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
 		AllowCredentials: true,
 	}))
@@ -28,6 +28,8 @@ func main() {
 	app.Post("/api/users", handler.Register)
 	app.Post("/api/users/login", handler.Login)
 	app.Get("/api/users/current", middleware.JWTProtected, controller.GetCurrentUser)
+	app.Patch("/api/users/current", middleware.JWTProtected, controller.UpdateCurrentUser)
+	app.Delete("/api/users/logout", controller.LogoutUser(config.DB))
 
 	app.Listen(":3000")
 
