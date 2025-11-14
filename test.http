@@ -22,12 +22,12 @@ Content-Type: application/json
 ### Get User API
 GET http://localhost:3000/api/users/current
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxMDc3MjMsInVzZXJuYW1lIjoicHpuIn0.rvm2zaZFBQ0dt7xbipVZC9UWCH4GnI3z3WOJhN9x9wA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxNzg5NTUsInVzZXJuYW1lIjoicHpuIn0.YG9ZihkGGrO83mDi2swfQxwDUxNu8UkkCiSJsghtQEM
 
 ### Update User API
 PATCH http://localhost:3000/api/users/current
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxMDc3MjMsInVzZXJuYW1lIjoicHpuIn0.rvm2zaZFBQ0dt7xbipVZC9UWCH4GnI3z3WOJhN9x9wA
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxNzg5NTUsInVzZXJuYW1lIjoicHpuIn0.YG9ZihkGGrO83mDi2swfQxwDUxNu8UkkCiSJsghtQEM
 
 {
   "name" : "Programmer Zaman Now Lagi",
@@ -37,5 +37,16 @@ Content-Type: application/json
 ### Logout User API
 DELETE http://localhost:3000/api/users/logout
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxMDc3MjMsInVzZXJuYW1lIjoicHpuIn0.rvm2zaZFBQ0dt7xbipVZC9UWCH4GnI3z3WOJhN9x9wA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxNzg5NTUsInVzZXJuYW1lIjoicHpuIn0.YG9ZihkGGrO83mDi2swfQxwDUxNu8UkkCiSJsghtQEM
 
+### Create Contact API
+POST http://localhost:3000/api/users/contacts
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxNzg5NTUsInVzZXJuYW1lIjoicHpuIn0.YG9ZihkGGrO83mDi2swfQxwDUxNu8UkkCiSJsghtQEM
+
+{
+  "first_name" : "Eko",
+  "last_name" : "Khannedy",
+  "email" : "eko@pzn.com",
+  "phone" : "32423423434"
+}

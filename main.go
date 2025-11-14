@@ -29,7 +29,9 @@ func main() {
 	app.Post("/api/users/login", handler.Login)
 	app.Get("/api/users/current", middleware.JWTProtected, controller.GetCurrentUser)
 	app.Patch("/api/users/current", middleware.JWTProtected, controller.UpdateCurrentUser)
-	app.Delete("/api/users/logout", controller.LogoutUser(config.DB))
+	app.Delete("/api/users/logout", controller.LogoutUser)
+
+	app.Post("/api/contacts", middleware.JWTProtected, controller.CreateContact)
 
 	app.Listen(":3000")
 
