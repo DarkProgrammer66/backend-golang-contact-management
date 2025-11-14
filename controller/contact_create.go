@@ -46,7 +46,7 @@ func CreateContact(c *fiber.Ctx) error {
 
 	if err := config.DB.Create(&contact).Error; err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"errors": "Failed to create contact",
+			"errors": err.Error(),
 		})
 	}
 

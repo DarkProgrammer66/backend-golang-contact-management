@@ -40,9 +40,9 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxNzg5NTUsInVzZXJuYW1lIjoicHpuIn0.YG9ZihkGGrO83mDi2swfQxwDUxNu8UkkCiSJsghtQEM
 
 ### Create Contact API
-POST http://localhost:3000/api/users/contacts
+POST http://localhost:3000/api/contacts
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxNzg5NTUsInVzZXJuYW1lIjoicHpuIn0.YG9ZihkGGrO83mDi2swfQxwDUxNu8UkkCiSJsghtQEM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNDQ2MDksInVzZXJuYW1lIjoicHpuIn0.eEc-H7bxdezj09rWp7GewJB9ZKq6BoZDzNo3zeGLdqs
 
 {
   "first_name" : "Eko",

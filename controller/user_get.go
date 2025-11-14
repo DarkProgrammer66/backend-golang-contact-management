@@ -13,7 +13,7 @@ func GetCurrentUser(c *fiber.Ctx) error {
 	var user model.User
 	if err := config.DB.Where("username = ?", username).First(&user).Error; err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
-			"errors": "a",
+			"errors": "Username not found",
 		})
 	}
 
