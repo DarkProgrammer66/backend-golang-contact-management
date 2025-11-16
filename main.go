@@ -39,6 +39,8 @@ func main() {
 	app.Post("/api/contacts/:contactId/addresses", middleware.JWTProtected, controller.CreateAddress)
 	app.Get("/api/contacts/:contactId/addresses/:addressId", middleware.JWTProtected, controller.GetAddress)
 	app.Get("/api/contacts/:contactId/addresses", middleware.JWTProtected, controller.ListAddresses)
+	app.Put("/api/contacts/:contactId/addresses/:addressId", middleware.JWTProtected, controller.UpdateAddress)
+	app.Delete("/api/contacts/:contactId/addresses/:addressId", middleware.JWTProtected, controller.DeleteAddress)
 
 	app.Listen(":3000")
 

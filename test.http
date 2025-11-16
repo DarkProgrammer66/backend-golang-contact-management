@@ -42,7 +42,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMxNzg5NTUsInVz
 ### Create Contact API
 POST http://localhost:3000/api/contacts
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNDQ2MDksInVzZXJuYW1lIjoicHpuIn0.eEc-H7bxdezj09rWp7GewJB9ZKq6BoZDzNo3zeGLdqs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjcwMzUsInVzZXJuYW1lIjoicHpuIn0.-yUBUN1pj_Qc7Ks-DV4p5RZatUuz-cpxDT-_m7iKKek
 
 {
   "first_name" : "Eko",
@@ -56,8 +56,8 @@ GET http://localhost:3000/api/contacts?page=1&size=10
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNjg3NDQsInVzZXJuYW1lIjoicHpuIn0.yTCO_cBUNur6iWs3bZcr3TDXfETrJEISXz4bl9ZZFKI
 
 ### Delete Contact
-DELETE http://localhost:3000/api/contacts/2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNzYzNjMsInVzZXJuYW1lIjoicHpuIn0.cN_5CsfbMG93QAPXnWjN20euOOqQRunPe-XWcWyW37Y
+DELETE http://localhost:3000/api/contacts/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjc4MTksInVzZXJuYW1lIjoicHpuIn0.rqzsNSQdPh0WgY9m8JU5ihdmLaic_GzJk_ysUyibvOo
 
 ### Get Contact
 GET http://localhost:3000/api/contacts/6
@@ -78,7 +78,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNzgxNDUsInVz
 ### Create Address
 POST http://localhost:3000/api/contacts/1/addresses
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzMTA4ODEsInVzZXJuYW1lIjoicHpuIn0.3USkyPDoJRQW2eBByCKt1ONq_BvT92NRnpzsY0yVDlA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjcwMzUsInVzZXJuYW1lIjoicHpuIn0.-yUBUN1pj_Qc7Ks-DV4p5RZatUuz-cpxDT-_m7iKKek
 
 {
   "street": "Jalan apa",
@@ -88,10 +88,27 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzMTA4ODEsInVz
   "postal_code": "Kode pos"
 }
 
-### Get Address
+### List Address
 GET http://localhost:3000/api/contacts/1/addresses
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjA4ODAsInVzZXJuYW1lIjoicHpuIn0.SikESROEMiXynCscEskHpsLt8idrPixAKI0O0Arrh9Y
 
 ### Get Address
 GET http://localhost:3000/api/contacts/1/addresses/1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjA4ODAsInVzZXJuYW1lIjoicHpuIn0.SikESROEMiXynCscEskHpsLt8idrPixAKI0O0Arrh9Y
+
+### Update Address
+PUT http://localhost:3000/api/contacts/1/addresses/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjcwMzUsInVzZXJuYW1lIjoicHpuIn0.-yUBUN1pj_Qc7Ks-DV4p5RZatUuz-cpxDT-_m7iKKek
+
+{
+  "street" : "Jalan apa",
+  "city" : "Kota apa",
+  "province" : "Provinsi apa",
+  "country" : "Negara apa",
+  "postal_code" : "Kode pos"
+}
+
+### Delete Contact
+DELETE http://localhost:3000/api/contacts/1/addresses/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjc4MTksInVzZXJuYW1lIjoicHpuIn0.rqzsNSQdPh0WgY9m8JU5ihdmLaic_GzJk_ysUyibvOo
