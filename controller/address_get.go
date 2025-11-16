@@ -9,7 +9,7 @@ import (
 
 func GetAddress(c *fiber.Ctx) error {
 	// Parse params
-	contactId := c.Params("contactId")
+	contactId := c.Params("id")
 	addressId := c.Params("addressId")
 
 	var contact model.Contact

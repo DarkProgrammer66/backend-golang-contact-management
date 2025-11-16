@@ -8,7 +8,7 @@ import (
 )
 
 func ListAddresses(c *fiber.Ctx) error {
-	contactId := c.Params("contactId")
+	contactId := c.Params("id")
 
 	// Cek apakah contact ada
 	var contact model.Contact

@@ -109,6 +109,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjcwMzUsInVz
   "postal_code" : "Kode pos"
 }
 
-### Delete Contact
-DELETE http://localhost:3000/api/contacts/1/addresses/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjc4MTksInVzZXJuYW1lIjoicHpuIn0.rqzsNSQdPh0WgY9m8JU5ihdmLaic_GzJk_ysUyibvOo
+### Delete Address
+DELETE http://localhost:3000/api/contacts/1/addresses/3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzODY3NjYsInVzZXJuYW1lIjoicHpuIn0.e2QzA8rkMZzJZs-GaKJrL9J4ZPAthZQouHwvl1kaHBQ
