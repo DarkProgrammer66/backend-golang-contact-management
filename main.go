@@ -32,6 +32,13 @@ func main() {
 	app.Delete("/api/users/logout", controller.LogoutUser)
 
 	app.Post("/api/contacts", middleware.JWTProtected, controller.CreateContact)
+	app.Get("/api/contacts", middleware.JWTProtected, controller.SearchContacts)
+	app.Delete("/api/contacts/:id", middleware.JWTProtected, controller.DeleteContact)
+	app.Get("/api/contacts/:id", middleware.JWTProtected, controller.GetContact)
+	app.Put("/api/contacts/:id", middleware.JWTProtected, controller.UpdateContact)
+	app.Post("/api/contacts/:contactId/addresses", middleware.JWTProtected, controller.CreateAddress)
+	app.Get("/api/contacts/:contactId/addresses/:addressId", middleware.JWTProtected, controller.GetAddress)
+	app.Get("/api/contacts/:contactId/addresses", middleware.JWTProtected, controller.ListAddresses)
 
 	app.Listen(":3000")
 

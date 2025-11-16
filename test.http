@@ -50,3 +50,48 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNDQ2MDksInVz
   "email" : "eko@pzn.com",
   "phone" : "32423423434"
 }
+
+### Search contacts API
+GET http://localhost:3000/api/contacts?page=1&size=10
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNjg3NDQsInVzZXJuYW1lIjoicHpuIn0.yTCO_cBUNur6iWs3bZcr3TDXfETrJEISXz4bl9ZZFKI
+
+### Delete Contact
+DELETE http://localhost:3000/api/contacts/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNzYzNjMsInVzZXJuYW1lIjoicHpuIn0.cN_5CsfbMG93QAPXnWjN20euOOqQRunPe-XWcWyW37Y
+
+### Get Contact
+GET http://localhost:3000/api/contacts/6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNzcwNjEsInVzZXJuYW1lIjoicHpuIn0.E2YL35-DGpGhfrjFEet8cJdWlNzeYK_Y-PDxAi8WxZQ
+
+### Update Contact
+PUT http://localhost:3000/api/contacts/6
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMyNzgxNDUsInVzZXJuYW1lIjoicHpuIn0.K2y9ndRbV2RsAC0eHNmtTSmFwrPWg_29zKDGgW89Aac
+
+{
+  "first_name": "Eko",
+  "last_name": "Khannedy",
+  "email": "eko@pzn.com",
+  "phone": "32423423434"
+}
+
+### Create Address
+POST http://localhost:3000/api/contacts/1/addresses
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzMTA4ODEsInVzZXJuYW1lIjoicHpuIn0.3USkyPDoJRQW2eBByCKt1ONq_BvT92NRnpzsY0yVDlA
+
+{
+  "street": "Jalan apa",
+  "city": "Kota apa",
+  "province": "Provinsi apa",
+  "country": "Negara apa",
+  "postal_code": "Kode pos"
+}
+
+### Get Address
+GET http://localhost:3000/api/contacts/1/addresses
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjA4ODAsInVzZXJuYW1lIjoicHpuIn0.SikESROEMiXynCscEskHpsLt8idrPixAKI0O0Arrh9Y
+
+### Get Address
+GET http://localhost:3000/api/contacts/1/addresses/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjMzNjA4ODAsInVzZXJuYW1lIjoicHpuIn0.SikESROEMiXynCscEskHpsLt8idrPixAKI0O0Arrh9Y
